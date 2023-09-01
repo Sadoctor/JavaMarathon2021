@@ -3,6 +3,7 @@ package day4;
 import java.util.*;
 public class Task1 {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] arr = new int[n];
@@ -13,62 +14,53 @@ public class Task1 {
             arr[i] = random.nextInt(11);
         }
 
-//        for(int i: arr){
-//            arr[i] = random.nextInt(11);
+//        for (int j : arr) {
+//            System.out.print(j + " ");
 //        }
+//        System.out.println();
 
-        for (int i: arr){
-            System.out.print(arr[i] + " ");
-        }
+        System.out.println(Arrays.toString(arr));
 
-//        System.out.println(Arrays.toString(arr));
+        System.out.println("Длинна массива: " + arr.length);
 
-        System.out.println("Длина массива: " + arr.length);
-
-        int eight = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 8) {
-                eight++;
+        int more_8 = 0;
+        for (int j : arr) {
+            if (j > 8) {
+                more_8++;
             }
         }
-        System.out.println("Количество чисел больше 8: " + eight);
+        System.out.println("Количество чисел больше 8: " + more_8);
 
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i] > 8) {
-//                eight++;
-//            }
-//        }
-//        System.out.println("Количество чисел больше 8: " + eight);
-
-        int one = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 1) {
-                one++;
+        int equals_1 = 0;
+        for (int j : arr) {
+            if (j == 1) {
+                equals_1++;
             }
         }
-        System.out.println("Количество чисел равных 1: " + one);
+        System.out.println("Количество чисел равных 1: " + equals_1);
 
-        int evenNumber = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                evenNumber++;
+        int even_numbers = 0;
+        for (int j : arr) {
+            if (j % 2 == 0) {
+                even_numbers++;
             }
         }
-        System.out.println("Количество четных чисел: " + evenNumber);
+        System.out.println("Количество четных чисел: " + even_numbers);
 
-        int oddNumber = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 != 0) {
-                oddNumber++;
+        int odd_numbers = 0;
+        for (int j : arr) {
+            if (j % 2 != 0) {
+                odd_numbers++;
             }
         }
-        System.out.println("Количество нечетных чисел: " + oddNumber);
+        System.out.println("Количество нечетных чисел: " + odd_numbers);
 
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int j : arr) {
+            sum += j;
         }
-        System.out.print("Сумма всех элементов массива: " + sum);
-
+        System.out.println("Сумма всех элементов массива: " + sum);
     }
 }
+
+

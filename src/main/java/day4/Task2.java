@@ -14,25 +14,25 @@ public class Task2 {
         System.out.println(Arrays.toString(arr));
 
         int max = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > max)
-                max = arr[i];
+        for (int j : arr) {
+            if (j > max)
+                max = j;
         }
         System.out.println("Наибольший элемент массива = " + max);
 
         int min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < min)
-                min = arr[i];
+        for (int j : arr) {
+            if (j < min)
+                min = j;
         }
         System.out.println("Наименьший элемент массива = " + min);
 
         int count = 0;
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 10 == 0) {
+        for (int j : arr) {
+            if (j % 10 == 0) {
                 count++;
-                sum += arr[i];
+                sum += j;
             }
         }
         System.out.println("Количество элементов массива, оканчивающихся на 0 = " + count);
