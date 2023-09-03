@@ -1,5 +1,6 @@
 package day6;
 
+
 public class Airplane {
 
     private String manufacturer; // изготовитель
@@ -44,8 +45,7 @@ public class Airplane {
         System.out.println("Изготовитель: " + manufacturer + ", год выпуска: " + year + ", длина: " + length + "(м), вес: " + weight + "(т), количество топлива в баке: " + fuel + "(л)");
     }
 
-    int fillUp(int n){
+    public void fillUp(int n) {
         fuel = fuel + n;
-        return fuel;
     }
 }

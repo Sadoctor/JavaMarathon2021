@@ -1,5 +1,6 @@
 package day6;
 
+
 import java.util.Random;
 
 public class Teacher {
@@ -37,8 +38,7 @@ public class Teacher {
             break;
             case 4: gradeWord = "Хорошо";
             break;
-            case 5: gradeWord = "Отлично";
-            break;
+            default: gradeWord = "Отлично";
         }
         System.out.println("Преподаватель " + name + " оценил студента с именем " + student.getName() + " по предмету " + subject + " на оценку " + gradeWord + ".");
     }
