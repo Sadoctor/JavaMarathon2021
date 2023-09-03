@@ -11,7 +11,7 @@ public class Task1 {
         Car car1 = new Car();
         car1.setModel("BMW");
         car1.setColor("Red");
-        car1.setYear_of_issue(2018);
+        car1.setYear(2018);
 
         car1.info();
         System.out.println("Данному автомобилю " + car1.yearDifference(inputYear) + " лет");

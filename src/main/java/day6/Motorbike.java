@@ -1,7 +1,7 @@
 package day6;
 
 
-class Motorbike {
+public class Motorbike {
 
     private String model;
     private String color;

@@ -1,7 +1,13 @@
-package day6;
+package day7;
 
 
 public class Airplane {
+
+    public static void compareAirplanes(Airplane airplane1, Airplane airplane2){
+        if (airplane1.length > airplane2.length)
+            System.out.println("Первый самолет длинее, чем второй");
+        else System.out.println("Второй самолет длинее, чем первый");
+    }
 
     private String manufacturer; // изготовитель
     private int year;            // год выпуска
