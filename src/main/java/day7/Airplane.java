@@ -5,8 +5,10 @@ public class Airplane {
 
     public static void compareAirplanes(Airplane airplane1, Airplane airplane2){
         if (airplane1.length > airplane2.length)
-            System.out.println("Первый самолет длинее, чем второй");
-        else System.out.println("Второй самолет длинее, чем первый");
+            System.out.println("Первый самолет длиннее");
+        else if (airplane1.length < airplane2.length)
+            System.out.println("Второй самолет длиннее");
+        else System.out.println("Длины самолетов равны");
     }
 
     private String manufacturer; // изготовитель

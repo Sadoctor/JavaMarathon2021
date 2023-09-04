@@ -3,8 +3,8 @@ package day7;
 public class Player {
 
     private int stamina;
-    private static final int MAX_STAMINA = 100;
-    private static final int MIN_STAMINA = 0;
+    public static final int MAX_STAMINA = 100;
+    public static final int MIN_STAMINA = 0;
     private static int countPlayers;
 
     public Player(int stamina) {
@@ -21,28 +21,51 @@ public class Player {
         return countPlayers;
     }
 
-    public void run() {         // Выдаает ошибку countWhenStamina0(): "Вызов метода run, 4 раза на объекте класса Player (stamina = 1),
-        if (stamina == 0)       // при общем кол-ве игроков 4. Общее количество игроков стало" Expected :3; Actual :1
-            countPlayers--;     // Выдаает ошибку run1(): Создан один экземпляр Player. Вызов метода run,
-        else stamina--;         // 1 раз на объекте класса Player (stamina = 1). Общее количество игроков ==> Expected :0; Actual   :1
+    public void run() {
+        switch (stamina) {
+            case MIN_STAMINA:
+                break;
+            case 1:stamina--; countPlayers--;
+                break;
+            default: stamina--;
+        }
+    }
+
+    public static String stringCountPlayers(int n){
+        String string = "Команды неполные. На поле еще есть ";
+        switch (n){
+            case 1:
+                string = string + n + " свободное место";
+                break;
+            case 5:
+                string = string + n + " свободных мест";
+                break;
+            default: string = string + n + " свободных места";
+        }
+        return string;
     }
 
     public static void info() {
         switch (countPlayers) {
             case 1:
-                System.out.println("Команды неполные. На поле еще есть 5 свободных мест");
+                System.out.println(Player.stringCountPlayers(5));
+//                System.out.println("Команды неполные. На поле еще есть 5 свободных мест");
                 break;
             case 2:
-                System.out.println("Команды неполные. На поле еще есть 4 свободных мест");
+                System.out.println(Player.stringCountPlayers(4));
+//                System.out.println("Команды неполные. На поле еще есть 4 свободных места");
                 break;
             case 3:
-                System.out.println("Команды неполные. На поле еще есть 3 свободных мест");
+                System.out.println(Player.stringCountPlayers(3));
+//                System.out.println("Команды неполные. На поле еще есть 3 свободных места");
                 break;
             case 4:
-                System.out.println("Команды неполные. На поле еще есть 2 свободных мест");
+                System.out.println(Player.stringCountPlayers(2));
+//                System.out.println("Команды неполные. На поле еще есть 2 свободных места");
                 break;
             case 5:
-                System.out.println("Команды неполные. На поле еще есть 1 свободное место");
+                System.out.println(Player.stringCountPlayers(1));
+//                System.out.println("Команды неполные. На поле еще есть 1 свободное место");
                 break;
             default: System.out.println("На поле нет свободных мест");
 

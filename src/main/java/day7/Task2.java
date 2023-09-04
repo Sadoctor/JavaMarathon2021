@@ -6,17 +6,34 @@ public class Task2 {
     public static void main(String[] args) {
         Random random = new Random();
 
-        Player p = new Player(1);
-        Player p2 = new Player(10);
-        Player p3 = new Player(10);
-        Player p4 = new Player(10);
+        int randomStamina;
+
+        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+        Player p1 = new Player(randomStamina);
+        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+        Player p2 = new Player(randomStamina);
+        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+        Player p3 = new Player(randomStamina);
+        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+        Player p4 = new Player(randomStamina);
+        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+        Player p5 = new Player(randomStamina);
+        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+        Player p6 = new Player(randomStamina);
+
+//        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+//        Player p7 = new Player(randomStamina);
+//        randomStamina = random.nextInt( Player.MAX_STAMINA - 90 + 1) + 90;
+//        Player p8 = new Player(randomStamina);
+//
+//        Player.info();
 
         Player.info();
 
-        p.run();
-        p.run();
-        p.run();
-        p.run();
+        for (int i = p1.getStamina(); i != 0 ; i--){
+            p1.run();
+            System.out.println("Стамина 1 игрока = " + p1.getStamina());
+        }
 
         Player.info();
 
