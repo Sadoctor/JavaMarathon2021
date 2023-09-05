@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class Task2 {
     public static void main(String[] args) {
+        long startTime1 = System.currentTimeMillis();
+
         Random random = new Random();
 
         int randomStamina;
@@ -30,12 +32,15 @@ public class Task2 {
 
         Player.info();
 
-        for (int i = p1.getStamina(); i != 0 ; i--){
-            p1.run();
-            System.out.println("Стамина 1 игрока = " + p1.getStamina());
-        }
+        long stopTime1 = System.currentTimeMillis();
+        System.out.println("Длительность работы, в мс.: " + (stopTime1 - startTime1));
 
-        Player.info();
+//        for (int i = p1.getStamina(); i != 0 ; i--){
+//            p1.run();
+//            System.out.println("Стамина 1 игрока = " + p1.getStamina());
+//        }
+//
+//        Player.info();
 
     }
 }

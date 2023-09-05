@@ -31,44 +31,85 @@ public class Player {
         }
     }
 
-    public static String stringCountPlayers(int n){
-        String string = "Команды неполные. На поле еще есть ";
-        switch (n){
-            case 1:
-                string = string + n + " свободное место";
-                break;
-            case 5:
-                string = string + n + " свободных мест";
-                break;
-            default: string = string + n + " свободных места";
-        }
-        return string;
-    }
+//    public static String stringCountPlayers(int n){
+//        String string = "Команды неполные. На поле еще есть ";
+//        switch (n){
+//            case 1:
+//                string = string + n + " свободное место";
+//                break;
+//            case 5:
+//                string = string + n + " свободных мест";
+//                break;
+//            default: string = string + n + " свободных места";
+//        }
+//        return string;
+//    }
+//
+//    public static void info() {
+//        switch (countPlayers) {
+//            case 1:
+//                System.out.println(Player.stringCountPlayers(5));
+////                System.out.println("Команды неполные. На поле еще есть 5 свободных мест");
+//                break;
+//            case 2:
+//                System.out.println(Player.stringCountPlayers(4));
+////                System.out.println("Команды неполные. На поле еще есть 4 свободных места");
+//                break;
+//            case 3:
+//                System.out.println(Player.stringCountPlayers(3));
+////                System.out.println("Команды неполные. На поле еще есть 3 свободных места");
+//                break;
+//            case 4:
+//                System.out.println(Player.stringCountPlayers(2));
+////                System.out.println("Команды неполные. На поле еще есть 2 свободных места");
+//                break;
+//            case 5:
+//                System.out.println(Player.stringCountPlayers(1));
+////                System.out.println("Команды неполные. На поле еще есть 1 свободное место");
+//                break;
+//            default:
+//                System.out.println("На поле нет свободных мест");
+//        }
+//    }
+
+//    public static void info() {
+//        String string = "Команды неполные. На поле еще есть " + (6 - countPlayers);
+//
+//        switch (countPlayers) {
+//            case 1:
+//                string = string + " свободных мест";
+//                break;
+//            case 2: case 3: case 4:
+//                string = string + " свободных места";
+//                break;
+//            case 5:
+//                string = string + " свободное место";
+//                break;
+//            case 6:
+//                string = "На поле нет свободных мест";
+//                default: break;
+//        }
+//        System.out.println(string);
+//    }
 
     public static void info() {
+        StringBuilder string = new StringBuilder("Команды неполные. На поле еще есть " + (6 - countPlayers));
+
         switch (countPlayers) {
             case 1:
-                System.out.println(Player.stringCountPlayers(5));
-//                System.out.println("Команды неполные. На поле еще есть 5 свободных мест");
+                string.append(" свободных мест");
                 break;
-            case 2:
-                System.out.println(Player.stringCountPlayers(4));
-//                System.out.println("Команды неполные. На поле еще есть 4 свободных места");
-                break;
-            case 3:
-                System.out.println(Player.stringCountPlayers(3));
-//                System.out.println("Команды неполные. На поле еще есть 3 свободных места");
-                break;
-            case 4:
-                System.out.println(Player.stringCountPlayers(2));
-//                System.out.println("Команды неполные. На поле еще есть 2 свободных места");
+            case 2: case 3: case 4:
+                string.append(" свободных места");
                 break;
             case 5:
-                System.out.println(Player.stringCountPlayers(1));
-//                System.out.println("Команды неполные. На поле еще есть 1 свободное место");
+                string.append(" свободное место");
                 break;
-            default: System.out.println("На поле нет свободных мест");
-
+            case 6:
+                string.replace(0,string.length(),"На поле нет свободных мест");
+            default:
+                break;
         }
+        System.out.println(string);
     }
 }
