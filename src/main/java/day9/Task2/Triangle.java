@@ -1,11 +1,11 @@
 package day9.Task2;
 
 public class Triangle extends Figure{
-    private int lengthA;
-    private int lengthB;
-    private int lengthC;
+    private double lengthA;
+    private double lengthB;
+    private double lengthC;
 
-    public Triangle(int lengthA, int lengthB, int lengthC, String color) {
+    public Triangle(double lengthA, double lengthB, double lengthC, String color) {
         super(color);
         this.lengthA = lengthA;
         this.lengthB = lengthB;
@@ -13,7 +13,7 @@ public class Triangle extends Figure{
     }
 
     public double area() {
-    double p = perimeter()/2;
+    double p = perimeter()/2.0;
         return (Math.sqrt(p * (p - lengthA) * (p -lengthB) * (p - lengthC)));
     }
 

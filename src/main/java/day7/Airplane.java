@@ -3,14 +3,6 @@ package day7;
 
 public class Airplane {
 
-    public static void compareAirplanes(Airplane airplane1, Airplane airplane2){
-        if (airplane1.length > airplane2.length)
-            System.out.println("Первый самолет длиннее");
-        else if (airplane1.length < airplane2.length)
-            System.out.println("Второй самолет длиннее");
-        else System.out.println("Длины самолетов равны");
-    }
-
     private String manufacturer; // изготовитель
     private int year;            // год выпуска
     private int length;          // длина
@@ -23,6 +15,14 @@ public class Airplane {
         this.length = length;
         this.weight = weight;
         this.fuel = 0;
+    }
+
+    public static void compareAirplanes(Airplane airplane1, Airplane airplane2){
+        if (airplane1.length > airplane2.length)
+            System.out.println("Первый самолет длиннее");
+        else if (airplane1.length < airplane2.length)
+            System.out.println("Второй самолет длиннее");
+        else System.out.println("Длины самолетов равны");
     }
 
     public void setManufacturer(String manufacturer) {
