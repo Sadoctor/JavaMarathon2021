@@ -31,6 +31,7 @@ public class Task2 {
                 people.add(line);
             }
 
+
             return people;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
