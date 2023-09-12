@@ -13,9 +13,12 @@ public class Task1 {
         cars.add("Mercedes");
         System.out.println(cars);
 
-       cars.add(cars.size()/2, "Haval");
-       cars.remove(0);
-       System.out.println(cars);
+        cars.add(cars.size()/2, "Haval");
+        System.out.println(cars);
+
+
+        cars.remove(0);
+        System.out.println(cars);
 
     }
 }

@@ -25,17 +25,11 @@ public class User {
     }
 
     public boolean isSubscribed(User user){
-        boolean bool = false;
-        if (this.subscriptions.contains(user))
-            bool = true;
-        return bool;
+        return subscriptions.contains(user);
     }
 
     public boolean isFriend(User user){
-        boolean bool = false;
-        if (this.subscriptions.contains(user) & user.subscriptions.contains(this))
-            bool = true;
-        return bool;
+        return subscriptions.contains(user) & user.subscriptions.contains(this);
     }
 
     public void sendMessage(User user, String text){

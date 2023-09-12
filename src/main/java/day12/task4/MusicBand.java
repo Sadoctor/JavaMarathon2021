@@ -24,12 +24,20 @@ public class MusicBand {
     public void setMembers(List<String> members) {this.members = members;}
 
     public static void transferMembers(MusicBand bandA, MusicBand bandB){
-        List<String> membersAB = new ArrayList<>();
-        List<String> membersEmpty = new ArrayList<>();
-        membersAB.addAll(bandB.getMembers());
-        membersAB.addAll(bandA.getMembers());
-        bandB.setMembers(membersAB);
-        bandA.setMembers(membersEmpty);
+
+//        for(String member : bandA.getMembers())
+//            bandB.getMembers().add(member);
+//        bandA.getMembers().clear();
+
+//        List<String> membersAB = new ArrayList<>();
+//        List<String> membersEmpty = new ArrayList<>();
+//        membersAB.addAll(bandB.getMembers());
+//        membersAB.addAll(bandA.getMembers());
+//        bandB.setMembers(membersAB);
+//        bandA.setMembers(membersEmpty);
+
+        bandB.getMembers().addAll(bandA.getMembers());
+        bandA.getMembers().clear();
     }
 
     public static void printMembers(MusicBand band){

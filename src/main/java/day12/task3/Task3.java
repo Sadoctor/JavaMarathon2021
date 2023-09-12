@@ -18,29 +18,15 @@ public class Task3 {
         allBands.add(new MusicBand("Валентин Стрыкало", 2010));
         allBands.add(new MusicBand("Би-2", 1988));
 
-//        for (MusicBand band : allBands)
-//            System.out.print("[ " + band.getName() + " " + band.getYear() + " ] ");
-//        System.out.println();
-
         // Вывод первоначального списка
-        System.out.println(print(allBands));
+        System.out.println(allBands);
 
         // Перемешивание списка и его вывод
         Collections.shuffle(allBands);
-        System.out.println(print(allBands));
+        System.out.println(allBands);
 
         // Вывод списка, состоящий из групп, основанных после 2000 год
-        System.out.println(print(groupsAfter2000(allBands)));
-    }
-
-
-    public static String print(List<MusicBand> bands) {
-        StringBuilder string = new StringBuilder("[ ");
-        for (MusicBand band : bands) {
-             string.append(band.getName()).append(" ").append(band.getYear()).append(", ");
-        }
-        string.delete(string.length() - 2, string.length());
-        return string + " ]";
+        System.out.println(groupsAfter2000(allBands));
     }
 
     public static List<MusicBand> groupsAfter2000(List<MusicBand> bands){

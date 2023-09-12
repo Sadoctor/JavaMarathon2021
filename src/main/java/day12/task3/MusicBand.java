@@ -16,4 +16,9 @@ public class MusicBand {
     public int getYear() {
         return year;
     }
+
+    @Override
+    public String toString() {
+        return name  + " " +  year;
+    }
 }

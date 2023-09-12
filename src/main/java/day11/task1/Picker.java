@@ -1,6 +1,10 @@
 package day11.task1;
 
 public class Picker implements Worker{
+    public static final int PICKER_SALARY = 80;
+    public static final int PICKER_BONUS = 70000;
+
+
     private double salary;
     private boolean isPayed;
     private Warehouse warehouse;
@@ -23,16 +27,20 @@ public class Picker implements Worker{
 
     @Override
     public void doWork(){
-        salary += 80;
+        salary += PICKER_SALARY;
         warehouse.addCountPickedOrders();
     }
 
     @Override
     public void bonus() {
-        if (warehouse.getCountPickedOrders() < 10000)
-            System.out.println("Бонус пока не доступен");
-        else if (warehouse.getCountPickedOrders() > 10000)
-            System.out.println("Бонус уже был выплачен");
-        else { salary += 70000; isPayed = true; }
+        if (!isPayed)  {
+            if (warehouse.getCountPickedOrders() < ORDERS_FOR_BONUS)
+                System.out.println("Бонус пока не доступен");
+            else {
+                salary += PICKER_BONUS;
+                isPayed = true;
+            }
+        }
+        else System.out.println("Бонус уже был выплачен");
     }
 }
