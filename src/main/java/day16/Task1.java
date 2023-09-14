@@ -26,6 +26,7 @@ public class Task1 {
 
 
             System.out.println(sum / count + " --> " + Math.round((sum / count) * 1000.0) / 1000.0);
+//            System.out.printf(sum / count + " --> %.3f", (sum / count));
 
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
