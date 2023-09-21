@@ -9,7 +9,7 @@ public class ChessBoard {
 
     public static void print(ChessBoard chessBoard){
         for (ChessPiece[] chessPiece : chessBoard.chessPieces) {
-            for (ChessPiece piece : chessPiece) System.out.print(piece.getName());
+            for (ChessPiece piece : chessPiece) System.out.print(piece.toString());
             System.out.println();
         }
     }

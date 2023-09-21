@@ -17,11 +17,8 @@ public enum ChessPiece {
         this.name = name;
     }
 
-    public double getValue() {
-        return value;
-    }
-
-    public String getName() {
+    @Override
+    public String toString() {
         return name;
     }
 }
