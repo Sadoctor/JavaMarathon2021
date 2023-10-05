@@ -1,7 +1,5 @@
 package day14;
 
-import java.util.List;
-
 public class Person {
     private String name;
     private int year;

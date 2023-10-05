@@ -13,8 +13,7 @@ public class Task1 {
     }
 
     public static void printSumDigits(File file) {
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
 
             String line = scanner.nextLine();
             String[] numbers =  line.split(" ");
