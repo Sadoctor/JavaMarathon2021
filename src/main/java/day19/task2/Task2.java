@@ -16,52 +16,65 @@ public class Task2 {
         Scanner sc1 = new Scanner(file);
         Map<Integer, Point> cars = new HashMap<>();
 
-        while (sc1.hasNextLine()){
-            String line = sc1.nextLine();
-            String [] car = line.split(" ");
-
-            int carKey = Integer.parseInt(car[0]);  // Есть ли необходимость вводить дополнительные переменные для лучшей читабельности кода?
-            int carX = Integer.parseInt(car[1]);
-            int carY = Integer.parseInt(car[2]);
-
-            cars.put(carKey, new Point(carX, carY));
-
+        while (sc1.hasNextLine()) {
+            String[] car = sc1.nextLine().split(" ");
+            cars.put(Integer.parseInt(car[0]), new Point(Integer.parseInt(car[1]), Integer.parseInt(car[2])));
         }
-
         sc1.close();
 
 //        for (Map.Entry<Integer, Point> car: cars.entrySet()) {
 //            System.out.println(car.getKey() + " : " + car.getValue().toString());
 //        }
 
-        Scanner sc2 = new Scanner(System.in);
-        System.out.println("Введите 4 координаты");
+        while (true) {
+            try {
+                System.out.println("Введите 4 координаты");
 
-        System.out.print("х1: ");
-        int x1 = sc2.nextInt();
-        System.out.print("у1: ");
-        int y1 = sc2.nextInt();
-        System.out.print("х2: ");
-        int x2 = sc2.nextInt();
-        System.out.print("у2: ");
-        int y2 = sc2.nextInt();
-        
-        sc2.close();
-        
-//        System.out.println("Координаты первой точки: (" + x1 + ", " + y1 + ") \nКоординаты второй точки: (" + x2 + ", " + y2 + ")");
+                int x1 = getCoord("x1");
+                int y1 = getCoord("y1");
+                int x2 = getCoord("x2");
+                int y2 = getCoord("y2");
 
-        int sumCars = 0;
-        System.out.print("Идентификаторы машин, которые находятся внутри квадрата: ");
-        for (Map.Entry<Integer, Point> car: cars.entrySet()) {
-           int keyCar = car.getKey();
-           if((cars.get(keyCar).getX() > x1 && cars.get(keyCar).getX() < x2) && (cars.get(keyCar).getY() > y1 && cars.get(keyCar).getY() < y2)){
-               System.out.print(car.getKey() + " ");
-               sumCars++;
-           }
+                if (x1 >= x2 | y1 >= y2)
+                    throw new IllegalArgumentException("Некорректный ввод координат. x2,y2 должны быть больше x1,y1");
+
+                int sumCars = 0;
+                System.out.print("Идентификаторы машин, которые находятся внутри квадрата: ");
+                for (Map.Entry<Integer, Point> car : cars.entrySet()) {
+                    int keyCar = car.getKey();
+                    if ((cars.get(keyCar).getX() > x1 && cars.get(keyCar).getX() < x2) && (cars.get(keyCar).getY() > y1 && cars.get(keyCar).getY() < y2)) {
+                        System.out.print(car.getKey() + " ");
+                        sumCars++;
+                    }
+                }
+                System.out.println("\nОбщее количество машин в квадрате: " + sumCars);
+                break;
+
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
-//        System.out.println();
-        System.out.println("\nОбщее количество машин в квадрате: " + sumCars);
+    }
 
+    public static int getCoord(String stringCoord) {
+        int correctCoord;
+
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print(stringCoord + ": ");
+
+                String line = scanner.nextLine();
+                if (!line.matches("[1234567890]+"))
+                    throw new IllegalArgumentException("Некорректный ввод координаты. Введите координату еще раз.");
+
+                correctCoord = Integer.parseInt(line);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return correctCoord;
     }
 }
 
